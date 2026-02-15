@@ -1,0 +1,2627 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>안해균의 정선 생활 | Jeongseon Life</title>
+  <meta name="description" content="서울과 강원도 정선을 오가며 산과 자연, 반려동물과 함께하는 안해균의 고즈넉한 일상 기록. 해발 1,382m 가리왕산, 정선 오일장, 카페, 맛집 이야기.">
+  <meta property="og:title" content="안해균의 정선 생활">
+  <meta property="og:description" content="서울과 정선, 두 도시를 오가며 산과 자연, 반려동물과 함께하는 고즈넉한 일상">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --mountain-deep: #2C3E50;
+      --mountain-mid: #34495E;
+      --forest-dark: #1a472a;
+      --forest: #2d6a4f;
+      --forest-light: #52b788;
+      --autumn-gold: #d4a017;
+      --autumn-orange: #e07b39;
+      --autumn-red: #c0392b;
+      --sky-blue: #5dade2;
+      --sky-light: #aed6f1;
+      --snow-white: #f8f9fa;
+      --warm-cream: #fdf6ec;
+      --warm-beige: #f5e6d3;
+      --fireplace-glow: #e74c3c;
+      --coffee-brown: #6f4e37;
+      --text-dark: #2c2c2c;
+      --text-mid: #555;
+      --text-light: #888;
+      --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
+      --shadow-medium: 0 8px 30px rgba(0,0,0,0.12);
+      --shadow-strong: 0 12px 40px rgba(0,0,0,0.18);
+      --radius: 16px;
+      --radius-sm: 8px;
+      --transition: all 0.3s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      color: var(--text-dark);
+      background: var(--snow-white);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: var(--transition);
+    }
+
+    nav.scrolled {
+      box-shadow: var(--shadow-soft);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--forest-dark);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo span {
+      font-size: 1.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-mid);
+      font-size: 0.9rem;
+      font-weight: 400;
+      padding: 8px 16px;
+      border-radius: 24px;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--forest);
+      background: rgba(45,106,79,0.08);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-dark);
+      padding: 8px;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: url('images/cover-rainbow.jpg') center center / cover no-repeat;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: linear-gradient(to top, var(--snow-white), transparent);
+    }
+
+    /* Mountain silhouettes */
+    .mountains {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 300px;
+      z-index: 1;
+    }
+
+    .mountain-layer {
+      position: absolute;
+      bottom: 0;
+      left: -5%;
+      right: -5%;
+    }
+
+    .mountain-layer svg {
+      width: 110%;
+      display: block;
+    }
+
+    /* Rainbow arc */
+    .rainbow-arc {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      border-radius: 300px 300px 0 0;
+      border: 3px solid transparent;
+      background:
+        linear-gradient(var(--snow-white), var(--snow-white)) padding-box,
+        linear-gradient(90deg, #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db, #9b59b6) border-box;
+      opacity: 0.15;
+      z-index: 0;
+      animation: rainbowPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes rainbowPulse {
+      0%, 100% { opacity: 0.1; transform: translateX(-50%) scale(1); }
+      50% { opacity: 0.2; transform: translateX(-50%) scale(1.02); }
+    }
+
+    /* Floating clouds */
+    .cloud {
+      position: absolute;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50px;
+      z-index: 0;
+    }
+
+    .cloud-1 {
+      width: 200px; height: 40px; top: 20%; left: 10%;
+      animation: floatCloud 20s linear infinite;
+    }
+    .cloud-2 {
+      width: 150px; height: 30px; top: 30%; right: 15%;
+      animation: floatCloud 25s linear infinite reverse;
+    }
+    .cloud-3 {
+      width: 180px; height: 35px; top: 15%; left: 50%;
+      animation: floatCloud 30s linear infinite;
+    }
+
+    @keyframes floatCloud {
+      0% { transform: translateX(-100px); }
+      50% { transform: translateX(100px); }
+      100% { transform: translateX(-100px); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 120px 24px 200px;
+      max-width: 800px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255,255,255,0.3);
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: white;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+
+    .hero h1 .highlight {
+      background: linear-gradient(135deg, #f1c40f, #f39c12);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.9);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 36px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.95);
+      color: var(--forest-dark);
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: var(--shadow-medium);
+      transition: var(--transition);
+      animation: fadeInUp 0.8s ease-out 0.6s both;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-strong);
+      background: white;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-indicator span {
+      display: block;
+      width: 24px;
+      height: 38px;
+      border: 2px solid rgba(255,255,255,0.6);
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .scroll-indicator span::after {
+      content: '';
+      width: 4px;
+      height: 8px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 2px;
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: scrollDot 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
+    }
+
+    @keyframes scrollDot {
+      0% { opacity: 1; top: 6px; }
+      100% { opacity: 0; top: 20px; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== SECTION STYLES ===== */
+    section {
+      padding: 100px 24px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .section-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      display: block;
+      animation: gentleBounce 3s ease-in-out infinite;
+    }
+
+    @keyframes gentleBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .section-label {
+      display: inline-block;
+      background: var(--warm-cream);
+      color: var(--coffee-brown);
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .section-header p {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    /* ===== INTRO / ABOUT SECTION ===== */
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--forest-dark);
+    }
+
+    .about-text p {
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 16px;
+      line-height: 1.9;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 20px;
+      background: var(--warm-cream);
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stat-card .stat-icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .stat-card .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .stat-card .stat-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .about-image-area {
+      position: relative;
+    }
+
+    .profile-card {
+      background: linear-gradient(135deg, var(--forest-dark), var(--forest));
+      border-radius: var(--radius);
+      padding: 48px 32px;
+      text-align: center;
+      color: white;
+      box-shadow: var(--shadow-strong);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+    }
+
+    .profile-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--autumn-gold), var(--autumn-orange));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin: 0 auto 20px;
+      border: 3px solid rgba(255,255,255,0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-card .company {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      font-weight: 300;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-detail {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      opacity: 0.85;
+      font-weight: 300;
+    }
+
+    .profile-detail-icon {
+      font-size: 1rem;
+    }
+
+    /* ===== NATURE SECTION ===== */
+    .nature {
+      background: linear-gradient(180deg, var(--snow-white) 0%, #e8f5e9 50%, var(--snow-white) 100%);
+    }
+
+    .nature-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .nature-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: white;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+      cursor: default;
+    }
+
+    .nature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .nature-card-image {
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nature-card-image .photo-icon {
+      font-size: 4rem;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
+    }
+
+    .nature-card-image .photo-label {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 400;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(8px);
+      padding: 6px 12px;
+      border-radius: 6px;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .cable-car-bg {
+      background: url('images/cafe-1382m.jpg') center center / cover no-repeat;
+    }
+
+    .snowy-bg {
+      background: url('images/gariwang-snow.jpg') center center / cover no-repeat;
+    }
+
+    .rainbow-bg {
+      background: url('images/cover-rainbow.jpg') center center / cover no-repeat;
+    }
+
+    .mountain-view-bg {
+      background: url('images/gariwang-snow.jpg') center 30% / cover no-repeat;
+    }
+
+    .fireplace-bg {
+      background: url('images/fireplace.jpg') center center / cover no-repeat;
+    }
+
+    .frozen-lake-bg {
+      background: url('images/gariwang-snow.jpg') center 60% / cover no-repeat;
+    }
+
+    .nature-card-body {
+      padding: 24px;
+    }
+
+    .nature-card-body h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .nature-card-body p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ===== MARKET SECTION ===== */
+    .market {
+      background: var(--warm-cream);
+    }
+
+    .market-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .market-main-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: url('images/market-oden.jpg') center center / cover no-repeat;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      box-shadow: var(--shadow-medium);
+    }
+
+    .market-main-image .photo-icon {
+      font-size: 5rem;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
+    }
+
+    .market-main-image .photo-label {
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 400;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+      padding: 8px 20px;
+      border-radius: 8px;
+    }
+
+    .market-content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+
+    .market-content p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      font-weight: 300;
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+
+    .market-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .market-item {
+      background: white;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: var(--transition);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .market-item:hover {
+      transform: translateX(4px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .market-item-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .market-item-text {
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+
+    .market-item-text strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+
+    .market-item-text span {
+      color: var(--text-light);
+      font-size: 0.8rem;
+    }
+
+    /* Price tag callout */
+    .price-callout {
+      background: linear-gradient(135deg, var(--forest), var(--forest-dark));
+      color: white;
+      padding: 24px;
+      border-radius: var(--radius);
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    .price-callout h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .price-callout p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      font-weight: 300;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 0;
+    }
+
+    /* ===== CAFE SECTION ===== */
+    .cafe {
+      background: white;
+      position: relative;
+    }
+
+    .cafe-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+      align-items: center;
+    }
+
+    .cafe-feature.reversed {
+      direction: rtl;
+    }
+
+    .cafe-feature.reversed > * {
+      direction: ltr;
+    }
+
+    .cafe-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: var(--shadow-medium);
+      position: relative;
+    }
+
+    .cafe-image .photo-icon {
+      font-size: 4rem;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
+    }
+
+    .cafe-image .photo-label {
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 400;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+      padding: 6px 16px;
+      border-radius: 6px;
+    }
+
+    .altitude-bg {
+      background: url('images/cafe-1382m.jpg') center center / cover no-repeat;
+    }
+
+    .ocean-cafe-bg {
+      background: url('images/ocean-cafe.jpg') center 70% / cover no-repeat;
+    }
+
+    .cafe-text h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .cafe-text p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      font-weight: 300;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .cafe-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--warm-cream);
+      color: var(--coffee-brown);
+      padding: 8px 16px;
+      border-radius: 24px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Altitude indicator */
+    .altitude-indicator {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      margin-top: 20px;
+      padding: 16px;
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      border-radius: var(--radius-sm);
+    }
+
+    .altitude-bar {
+      width: 8px;
+      border-radius: 4px;
+      background: var(--forest);
+      transition: height 1s ease;
+    }
+
+    .altitude-label {
+      font-size: 0.8rem;
+      color: var(--forest-dark);
+      font-weight: 500;
+    }
+
+    .altitude-value {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--forest-dark);
+      line-height: 1;
+    }
+
+    .altitude-unit {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--text-mid);
+    }
+
+    /* ===== BYULCHAE (COTTAGE) SECTION ===== */
+    .byulchae {
+      background: linear-gradient(180deg, var(--snow-white) 0%, var(--warm-beige) 50%, var(--snow-white) 100%);
+    }
+
+    .byulchae-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .byulchae-images {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .byulchae-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 180px;
+      box-shadow: var(--shadow-medium);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .byulchae-image-night {
+      background: url('images/byulchae-night.jpg') center center / cover no-repeat;
+    }
+
+    .byulchae-image-exterior {
+      background: url('images/byulchae-exterior.jpg') center 60% / cover no-repeat;
+    }
+
+    .byulchae-image-day {
+      background: url('images/byulchae-day.jpg') center 40% / cover no-repeat;
+    }
+
+    .byulchae-image .photo-icon {
+      font-size: 3.5rem;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
+    }
+
+    .byulchae-image .photo-label {
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 400;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+      padding: 8px 20px;
+      border-radius: 8px;
+    }
+
+    .byulchae-text h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+
+    .byulchae-text p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      font-weight: 300;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .byulchae-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .byulchae-feature {
+      background: white;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: var(--transition);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .byulchae-feature:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .byulchae-feature-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .byulchae-feature-text {
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+
+    .byulchae-feature-text strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+
+    .byulchae-feature-text span {
+      color: var(--text-light);
+      font-size: 0.8rem;
+    }
+
+    .byulchae-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--warm-cream);
+      color: var(--coffee-brown);
+      padding: 8px 16px;
+      border-radius: 24px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-top: 8px;
+    }
+
+    /* ===== PETS SECTION ===== */
+    .pets {
+      background: linear-gradient(180deg, var(--snow-white) 0%, #fff3e0 50%, var(--snow-white) 100%);
+    }
+
+    .pets-layout {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .pet-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    .pet-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .pet-card-image {
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+    }
+
+    .pet-card-image .photo-icon {
+      font-size: 5rem;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+    }
+
+    .pet-card-image .photo-label {
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 400;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 6px;
+    }
+
+    .roshi-bg {
+      background: url('images/roshi.jpg') center center / cover no-repeat;
+    }
+
+    .cat-bg {
+      background: url('images/cats-eating.jpg') center center / cover no-repeat;
+    }
+
+    .pet-card-body {
+      padding: 24px;
+    }
+
+    .pet-card-body h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pet-card-body p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .pet-tag {
+      display: inline-block;
+      background: #fff3e0;
+      color: #e65100;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-top: 12px;
+    }
+
+    /* ===== PHOTO GALLERY ===== */
+    .gallery {
+      background: white;
+      padding: 100px 24px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 200px;
+      gap: 16px;
+    }
+
+    .gallery-item {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item .photo-icon {
+      font-size: 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+      border-radius: var(--radius-sm);
+    }
+
+    .gallery-overlay span {
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 400;
+      padding: 6px 14px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(4px);
+      border-radius: 6px;
+    }
+
+    .gallery-item.span-2 {
+      grid-column: span 2;
+    }
+
+    .gallery-item.span-row {
+      grid-row: span 2;
+    }
+
+    .g-market { background: url('images/market-oden.jpg') center center / cover no-repeat; }
+    .g-snow { background: url('images/gariwang-snow.jpg') center center / cover no-repeat; }
+    .g-cable { background: url('images/cafe-1382m.jpg') center center / cover no-repeat; }
+    .g-fire { background: url('images/fireplace.jpg') center center / cover no-repeat; }
+    .g-dog { background: url('images/roshi.jpg') center center / cover no-repeat; }
+    .g-ocean { background: url('images/ocean-cafe.jpg') center center / cover no-repeat; }
+    .g-food { background: url('images/market-oden.jpg') center 40% / cover no-repeat; }
+    .g-autumn { background: url('images/cover-rainbow.jpg') center center / cover no-repeat; }
+    .g-mountain { background: url('images/gariwang-snow.jpg') center 50% / cover no-repeat; }
+    .g-cat { background: url('images/roshi-sleeping.jpg') center center / cover no-repeat; }
+
+    /* ===== FOOD SECTION ===== */
+    .food {
+      background: var(--warm-cream);
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .food-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    .food-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .food-card-image {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .food-card-image .photo-icon {
+      font-size: 3.5rem;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+    }
+
+    .food-card-image .photo-label {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      text-align: center;
+      color: white;
+      font-size: 0.75rem;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+      padding: 5px 10px;
+      border-radius: 6px;
+    }
+
+    .oden-bg { background: url('images/market-oden.jpg') center 30% / cover no-repeat; }
+    .bibim-bg { background: url('images/bibimbap.jpg') center center / cover no-repeat; }
+    .jeon-bg { background: url('images/jeon.jpg') center center / cover no-repeat; }
+    .sundubu-bg { background: url('images/sundubu.jpg') center center / cover no-repeat; }
+    .gogi-bg { background: url('images/korean-meat.jpg') center center / cover no-repeat; }
+    .makgeolli-bg { background: url('images/makgeolli.jpg') center center / cover no-repeat; }
+
+    .food-card-body {
+      padding: 20px;
+    }
+
+    .food-card-body h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .food-card-body p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .food-card-body .food-tags {
+      display: flex;
+      gap: 6px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .food-tag {
+      background: var(--warm-cream);
+      color: var(--coffee-brown);
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      font-weight: 500;
+    }
+
+    /* ===== FIREPLACE SECTION ===== */
+    .fireplace-banner {
+      background: url('images/fireplace.jpg') center center / cover no-repeat;
+      padding: 80px 24px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fireplace-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 70%, rgba(253,203,110,0.15) 0%, transparent 40%),
+        radial-gradient(circle at 70% 50%, rgba(214,48,49,0.1) 0%, transparent 40%);
+    }
+
+    .fireplace-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .fireplace-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      display: block;
+      animation: flicker 2s ease-in-out infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      25% { opacity: 0.9; transform: scale(1.02); }
+      50% { opacity: 1; transform: scale(0.98); }
+      75% { opacity: 0.95; transform: scale(1.01); }
+    }
+
+    .fireplace-content h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .fireplace-content p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      opacity: 0.85;
+      line-height: 1.9;
+    }
+
+    /* ===== QUOTE SECTION ===== */
+    .quote-section {
+      padding: 80px 24px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--forest-dark), var(--forest));
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 40%),
+        radial-gradient(circle at 80% 50%, rgba(255,255,255,0.03) 0%, transparent 40%);
+    }
+
+    .quote-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-mark {
+      font-size: 4rem;
+      opacity: 0.2;
+      font-family: Georgia, serif;
+      line-height: 1;
+      margin-bottom: -20px;
+    }
+
+    .quote-text {
+      font-size: 1.4rem;
+      font-weight: 300;
+      line-height: 2;
+      margin-bottom: 24px;
+    }
+
+    .quote-author {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      font-weight: 400;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--mountain-deep);
+      color: white;
+      padding: 60px 24px 40px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      opacity: 0.6;
+      font-weight: 300;
+      max-width: 300px;
+      line-height: 1.7;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer-link-group h4 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.5;
+      margin-bottom: 12px;
+    }
+
+    .footer-link-group a {
+      display: block;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 300;
+      padding: 4px 0;
+      transition: var(--transition);
+    }
+
+    .footer-link-group a:hover {
+      color: white;
+      padding-left: 4px;
+    }
+
+    .facebook-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1877f2;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: var(--transition);
+      margin-top: 8px;
+    }
+
+    .facebook-btn:hover {
+      background: #1565c0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(24,119,242,0.4);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+      opacity: 0.4;
+      font-weight: 300;
+    }
+
+    .footer-bottom .made-with {
+      font-size: 0.8rem;
+      opacity: 0.5;
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-image {
+      max-width: 85vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+
+    .lightbox.active .lightbox-image {
+      transform: scale(1);
+    }
+
+    .lightbox-caption {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 400;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
+      padding: 10px 24px;
+      border-radius: 24px;
+      white-space: nowrap;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .lightbox-nav:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .lightbox-prev { left: 24px; }
+    .lightbox-next { right: 24px; }
+
+    .lightbox-counter {
+      position: absolute;
+      top: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+    }
+
+    /* ===== SCROLL TO TOP ===== */
+    .scroll-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 900;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--forest);
+      color: white;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-medium);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .scroll-top:hover {
+      background: var(--forest-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    /* ===== NAV ACTIVE STATE ===== */
+    .nav-links a.active {
+      color: var(--forest);
+      background: rgba(45,106,79,0.1);
+      font-weight: 500;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .about-grid,
+      .market-layout,
+      .cafe-feature,
+      .cafe-feature.reversed,
+      .byulchae-layout {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+
+      .nature-cards,
+      .food-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 160px;
+      }
+
+      .about-stats {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 16px 24px;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+        box-shadow: var(--shadow-soft);
+      }
+
+      nav .nav-links.open {
+        display: flex;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 70px 16px;
+      }
+
+      .section-header h2 {
+        font-size: 1.7rem;
+      }
+
+      .nature-cards,
+      .pets-layout,
+      .food-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 140px;
+      }
+
+      .gallery-item.span-2 {
+        grid-column: span 1;
+      }
+
+      .gallery-item.span-row {
+        grid-row: span 1;
+      }
+
+      .about-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+
+      .stat-card {
+        padding: 12px 8px;
+      }
+
+      .market-items,
+      .byulchae-features {
+        grid-template-columns: 1fr;
+      }
+
+      .rainbow-arc {
+        width: 300px;
+        height: 150px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span>&#127956;</span> 정선 생활
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">소개</a></li>
+        <li><a href="#nature">자연</a></li>
+        <li><a href="#market">오일장</a></li>
+        <li><a href="#cafe">카페</a></li>
+        <li><a href="#byulchae">졸드루 별채</a></li>
+        <li><a href="#pets">반려동물</a></li>
+        <li><a href="#gallery">갤러리</a></li>
+        <li><a href="#food">맛집</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="메뉴 열기">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="rainbow-arc"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">&#127752; 강원도 정선 &middot; 해발 1,382m의 삶</div>
+      <h1>안해균의<br><span class="highlight">정선 생활</span></h1>
+      <p class="hero-subtitle">
+        서울과 정선, 두 도시를 오가며<br>
+        산과 시장, 벽난로와 눈길 위에서<br>
+        반려동물과 함께하는 고즈넉한 일상
+      </p>
+      <a href="#about" class="hero-cta">이야기 보기 &#8595;</a>
+    </div>
+
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-icon">&#128100;</span>
+        <div class="section-label">ABOUT</div>
+        <h2>안해균을 소개합니다</h2>
+        <p>서울에서 정선까지, 도시와 자연을 넘나드는 삶</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text fade-up">
+          <h3>도시의 감각, 자연의 여유</h3>
+          <p>
+            한국외국어대학교를 졸업하고, 2016년부터 Eljovi의 대표로 일하고 있는
+            안해균 씨는 서울과 강원도 정선을 오가며 독특한 라이프스타일을 만들어가고
+            있습니다.
+          </p>
+          <p>
+            해발 1,382미터 높이의 커피숍에서 일하고, 정선 오일장에서 신선한 재료를
+            장보고, 눈 덮인 산길을 유기묘 로시와 함께 산책하는 그의 일상은
+            많은 이들에게 새로운 삶의 방식을 보여줍니다.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat-card">
+              <div class="stat-icon">&#127979;</div>
+              <div class="stat-value">Eljovi</div>
+              <div class="stat-label">대표 (2016~)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">&#127956;</div>
+              <div class="stat-value">정선</div>
+              <div class="stat-label">강원도</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">&#9968;</div>
+              <div class="stat-value">1,382m</div>
+              <div class="stat-label">해발 고도</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-image-area fade-up">
+          <div class="profile-card">
+            <div class="profile-avatar">&#128075;</div>
+            <h3>안해균</h3>
+            <p class="company">Eljovi &middot; Owner & CEO</p>
+            <div class="profile-details">
+              <div class="profile-detail">
+                <span class="profile-detail-icon">&#127891;</span>
+                한국외국어대학교
+              </div>
+              <div class="profile-detail">
+                <span class="profile-detail-icon">&#127979;</span>
+                석산고등학교
+              </div>
+              <div class="profile-detail">
+                <span class="profile-detail-icon">&#128205;</span>
+                서울 / 정선
+              </div>
+              <div class="profile-detail">
+                <span class="profile-detail-icon">&#128054;</span>
+                유기묘 로시 & 고양이들
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nature Section -->
+  <section class="nature" id="nature">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-icon">&#127956;</span>
+        <div class="section-label">NATURE & SCENERY</div>
+        <h2>자연과 풍경</h2>
+        <p>가리왕산의 사계절, 눈 덮인 겨울 풍경, 무지개 걸린 가을 산</p>
+      </div>
+
+      <div class="nature-cards">
+        <div class="nature-card fade-up">
+          <div class="nature-card-image cable-car-bg">
+            <span class="photo-icon">&#128225;</span>
+            <span class="photo-label">가리왕산 케이블카에서 바라본 풍경</span>
+          </div>
+          <div class="nature-card-body">
+            <h3>&#128225; 가리왕산 케이블카</h3>
+            <p>High1 리조트에서 출발하는 케이블카를 타고 올라가면 펼쳐지는 장엄한 산맥의 풍경. 구름 위의 세상이 눈앞에 펼쳐집니다.</p>
+          </div>
+        </div>
+
+        <div class="nature-card fade-up">
+          <div class="nature-card-image snowy-bg">
+            <span class="photo-icon">&#10052;&#65039;</span>
+            <span class="photo-label">눈 내린 정선의 겨울 풍경</span>
+          </div>
+          <div class="nature-card-body">
+            <h3>&#10052;&#65039; 눈 내린 정선</h3>
+            <p>하얗게 눈 덮인 정선의 겨울. 고요한 설경 속에서 유기묘 로시와 함께 걷는 눈길 산책은 정선 생활의 특별한 순간입니다.</p>
+          </div>
+        </div>
+
+        <div class="nature-card fade-up">
+          <div class="nature-card-image rainbow-bg">
+            <span class="photo-icon">&#127752;</span>
+            <span class="photo-label">가을 산에 걸린 무지개</span>
+          </div>
+          <div class="nature-card-body">
+            <h3>&#127752; 무지개 걸린 가을 산</h3>
+            <p>붉게 물든 가을 산 위로 걸리는 무지개. 자연이 선사하는 가장 아름다운 선물을 정선에서 만날 수 있습니다.</p>
+          </div>
+        </div>
+
+        <div class="nature-card fade-up">
+          <div class="nature-card-image mountain-view-bg">
+            <span class="photo-icon">&#9968;</span>
+            <span class="photo-label">해발 1,382m 정상 부근의 전망</span>
+          </div>
+          <div class="nature-card-body">
+            <h3>&#9968; 해발 1,382m의 세상</h3>
+            <p>한국에서 가장 높은 곳에 위치한 커피숍 근처의 전망. 구름 사이로 보이는 산줄기가 끝없이 이어집니다.</p>
+          </div>
+        </div>
+
+        <div class="nature-card fade-up">
+          <div class="nature-card-image fireplace-bg">
+            <span class="photo-icon">&#128293;</span>
+            <span class="photo-label">벽난로가 있는 따뜻한 겨울 저녁</span>
+          </div>
+          <div class="nature-card-body">
+            <h3>&#128293; 벽난로의 온기</h3>
+            <p>바깥은 영하의 추위지만, 벽난로 앞에 앉아 따뜻한 차 한 잔을 마시는 겨울밤. 정선 생활의 가장 아늑한 순간.</p>
+          </div>
+        </div>
+
+        <div class="nature-card fade-up">
+          <div class="nature-card-image frozen-lake-bg">
+            <span class="photo-icon">&#129476;</span>
+            <span class="photo-label">얼어붙은 호수와 겨울 산</span>
+          </div>
+          <div class="nature-card-body">
+            <h3>&#129476; 얼어붙은 호수</h3>
+            <p>겨울이면 꽁꽁 얼어붙는 호수 위로 펼쳐지는 고요한 풍경. 투명한 얼음 아래로 보이는 또 다른 세상.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Section -->
+  <section class="market" id="market">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-icon">&#127981;</span>
+        <div class="section-label">JEONGSEON MARKET</div>
+        <h2>정선 오일장</h2>
+        <p>2, 7일에 열리는 전통 오일장에서 만나는 신선한 먹거리</p>
+      </div>
+
+      <div class="market-layout">
+        <div class="market-main-image fade-up">
+          <span class="photo-icon">&#127981;</span>
+          <span class="photo-label">활기 넘치는 정선 오일장의 모습</span>
+        </div>
+
+        <div class="market-content fade-up">
+          <h3>산골짜기의 살아있는 시장</h3>
+          <p>
+            매월 2일과 7일로 끝나는 날에 열리는 정선 오일장은
+            강원도의 정을 느낄 수 있는 전통 시장입니다.
+            싱싱한 해산물부터 갓 캔 나물, 제철 과일까지
+            놀라울 정도로 저렴한 가격에 만날 수 있습니다.
+          </p>
+
+          <div class="market-items">
+            <div class="market-item">
+              <span class="market-item-icon">&#127833;</span>
+              <div class="market-item-text">
+                <strong>오뎅 / 어묵</strong>
+                <span>시장 입구의 따끈한 어묵탕</span>
+              </div>
+            </div>
+            <div class="market-item">
+              <span class="market-item-icon">&#129424;</span>
+              <div class="market-item-text">
+                <strong>신선한 해산물</strong>
+                <span>활어, 건어물, 젓갈류</span>
+              </div>
+            </div>
+            <div class="market-item">
+              <span class="market-item-icon">&#127813;</span>
+              <div class="market-item-text">
+                <strong>제철 과일</strong>
+                <span>사과, 감, 딸기 등</span>
+              </div>
+            </div>
+            <div class="market-item">
+              <span class="market-item-icon">&#129382;</span>
+              <div class="market-item-text">
+                <strong>산나물 & 채소</strong>
+                <span>곤드레, 취나물, 각종 채소</span>
+              </div>
+            </div>
+            <div class="market-item">
+              <span class="market-item-icon">&#127858;</span>
+              <div class="market-item-text">
+                <strong>전 & 떡</strong>
+                <span>메밀전, 감자전, 찹쌀떡</span>
+              </div>
+            </div>
+            <div class="market-item">
+              <span class="market-item-icon">&#127862;</span>
+              <div class="market-item-text">
+                <strong>막걸리 & 한과</strong>
+                <span>정선 토속주와 한과류</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="price-callout">
+            <h4>&#128176; 서울 대비 믿을 수 없는 가격</h4>
+            <p>신선한 제철 재료를 도시의 절반도 안 되는 가격에!<br>오일장에서 장을 보는 즐거움은 정선 생활의 큰 행복입니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cafe Section -->
+  <section class="cafe" id="cafe">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-icon">&#9749;</span>
+        <div class="section-label">CAFE LIFE</div>
+        <h2>카페 생활</h2>
+        <p>해발 1,382m 하늘 위의 커피숍과 동해 바다를 품은 카페</p>
+      </div>
+
+      <!-- High altitude cafe -->
+      <div class="cafe-feature fade-up">
+        <div class="cafe-image altitude-bg">
+          <span class="photo-icon">&#9749;</span>
+          <span class="photo-label">대한민국 최고 해발 커피숍</span>
+        </div>
+        <div class="cafe-text">
+          <h3>&#9968; 해발 1,382m 커피숍</h3>
+          <p>
+            가리왕산 High1 리조트 지역에 위치한 대한민국에서 가장 높은 곳의
+            커피숍. 구름 사이로 펼쳐지는 산맥을 바라보며 커피 한 잔의 여유를
+            즐기는 곳입니다.
+          </p>
+          <p>
+            이곳에서 노트북을 펴고 일하는 것이 안해균 씨의 정선 스타일
+            원격근무. 사무실에서는 절대 느낄 수 없는 영감을 주는 공간입니다.
+          </p>
+          <span class="cafe-tag">&#9968; 대한민국 최고 높이 카페</span>
+
+          <div class="altitude-indicator">
+            <div>
+              <div class="altitude-label">해발 고도</div>
+              <div class="altitude-value">1,382</div>
+              <div class="altitude-unit">meters above sea level</div>
+            </div>
+            <div class="altitude-bar" style="height: 40px;"></div>
+            <div class="altitude-bar" style="height: 60px;"></div>
+            <div class="altitude-bar" style="height: 85px;"></div>
+            <div class="altitude-bar" style="height: 110px;"></div>
+            <div class="altitude-bar" style="height: 90px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ocean cafe -->
+      <div class="cafe-feature reversed fade-up">
+        <div class="cafe-image ocean-cafe-bg">
+          <span class="photo-icon">&#127754;</span>
+          <span class="photo-label">소돌해변 바다 카페에서의 한 때</span>
+        </div>
+        <div class="cafe-text">
+          <h3>&#127754; 소돌해변 바다 카페</h3>
+          <p>
+            동해안의 아름다운 소돌해변에 위치한 바다 카페.
+            파도 소리를 들으며 마시는 시그니처 메뉴 '파도라떼'는
+            정선을 벗어나 바다를 찾을 때 빠질 수 없는 코스입니다.
+          </p>
+          <p>
+            산 생활의 여유로움과는 또 다른, 바다가 주는 탁 트인
+            해방감을 느낄 수 있는 특별한 공간.
+          </p>
+          <span class="cafe-tag">&#127754; 시그니처: 파도라떼</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Byulchae Section -->
+  <section class="byulchae" id="byulchae">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-icon">&#127968;</span>
+        <div class="section-label">JOLDRU BYULCHAE</div>
+        <h2>졸드루 별채 생활</h2>
+        <p>여울가 앞, 컨테이너 2층 별채에서의 특별한 정선 일상</p>
+      </div>
+
+      <div class="byulchae-layout">
+        <div class="byulchae-images fade-up">
+          <div class="byulchae-image byulchae-image-day">
+            <span class="photo-icon">&#127968;</span>
+            <span class="photo-label">졸드루 별채 &middot; 컨테이너 2층 외관</span>
+          </div>
+          <div class="byulchae-image byulchae-image-exterior">
+            <span class="photo-icon">&#127770;</span>
+            <span class="photo-label">조명이 켜진 별채의 저녁</span>
+          </div>
+          <div class="byulchae-image byulchae-image-night">
+            <span class="photo-icon">&#127747;</span>
+            <span class="photo-label">달빛 아래 졸드루 별채의 밤</span>
+          </div>
+        </div>
+
+        <div class="byulchae-text fade-up">
+          <h3>여울가 앞 나만의 공간</h3>
+          <p>
+            정선의 맑은 여울가 바로 앞에 자리한 졸드루 별채.
+            컨테이너를 활용한 모던한 2층 구조로, 자연 속에서도
+            편안한 생활을 누릴 수 있는 특별한 공간입니다.
+          </p>
+          <p>
+            창밖으로 들리는 여울 소리를 배경으로 커피 한 잔의
+            여유를 즐기고, 밤에는 별이 쏟아지는 하늘 아래
+            고요한 시간을 보냅니다. 도시에서는 결코 경험할 수
+            없는, 졸드루 별채만의 힐링 라이프.
+          </p>
+          <span class="byulchae-tag">&#127969; 정선 졸드루 별채</span>
+
+          <div class="byulchae-features">
+            <div class="byulchae-feature">
+              <span class="byulchae-feature-icon">&#127969;</span>
+              <div class="byulchae-feature-text">
+                <strong>컨테이너 2층</strong>
+                <span>모던한 구조의 별채</span>
+              </div>
+            </div>
+            <div class="byulchae-feature">
+              <span class="byulchae-feature-icon">&#127754;</span>
+              <div class="byulchae-feature-text">
+                <strong>여울가 앞</strong>
+                <span>맑은 물소리가 들리는 위치</span>
+              </div>
+            </div>
+            <div class="byulchae-feature">
+              <span class="byulchae-feature-icon">&#127747;</span>
+              <div class="byulchae-feature-text">
+                <strong>별이 쏟아지는 밤</strong>
+                <span>도심에서 볼 수 없는 밤하늘</span>
+              </div>
+            </div>
+            <div class="byulchae-feature">
+              <span class="byulchae-feature-icon">&#128293;</span>
+              <div class="byulchae-feature-text">
+                <strong>벽난로의 온기</strong>
+                <span>겨울밤 따뜻한 불멍</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fireplace Banner -->
+  <div class="fireplace-banner">
+    <div class="fireplace-content fade-up">
+      <span class="fireplace-icon">&#128293;</span>
+      <h3>벽난로가 있는 겨울 생활</h3>
+      <p>
+        바깥 기온이 영하 20도까지 내려가는 정선의 겨울.<br>
+        벽난로에 장작을 넣고 불을 지피면<br>
+        타닥타닥 소리와 함께 온기가 번져나갑니다.<br>
+        창밖으로 내리는 눈을 바라보며<br>
+        따뜻한 차 한 잔의 행복.
+      </p>
+    </div>
+  </div>
+
+  <!-- Pets Section -->
+  <section class="pets" id="pets">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-icon">&#128049;</span>
+        <div class="section-label">COMPANIONS</div>
+        <h2>반려동물</h2>
+        <p>정선 생활을 함께하는 소중한 가족, 유기묘 로시와 고양이들</p>
+      </div>
+
+      <div class="pets-layout">
+        <div class="pet-card fade-up">
+          <div class="pet-card-image roshi-bg">
+            <span class="photo-icon">&#128049;</span>
+            <span class="photo-label">눈밭에서 신나게 뛰어노는 로시</span>
+          </div>
+          <div class="pet-card-body">
+            <h3>&#128049; 로시 (Roshi) - 유기묘</h3>
+            <p>
+              정선 생활의 가장 충실한 동반자. 유기묘 출신 로시는
+              눈 덮인 산길을 함께 걷고, 얼어붙은 호수 옆을 함께 산책하며
+              정선의 자연을 가장 기쁘게 누리는 친구입니다.
+              햇살 좋은 날이면 마당에서 일광욕을 즐기기도 합니다.
+            </p>
+            <span class="pet-tag">&#10052;&#65039; 겨울 산책 메이트</span>
+          </div>
+        </div>
+
+        <div class="pet-card fade-up">
+          <div class="pet-card-image cat-bg">
+            <span class="photo-icon">&#128049;</span>
+            <span class="photo-label">창가에서 햇살을 받으며 낮잠 자는 고양이</span>
+          </div>
+          <div class="pet-card-body">
+            <h3>&#128049; 고양이 가족</h3>
+            <p>
+              따뜻한 벽난로 앞을 가장 좋아하는 고양이들.
+              로시와 함께 마당에서 햇살 아래 나란히 일광욕을 즐기는
+              모습은 정선 생활의 가장 평화로운 풍경 중 하나입니다.
+              서로 사이좋게 어울리는 모습이 보는 이의 마음을 따뜻하게 합니다.
+            </p>
+            <span class="pet-tag">&#9728;&#65039; 일광욕 전문가</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="gallery" id="gallery">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-icon">&#128248;</span>
+        <div class="section-label">GALLERY</div>
+        <h2>정선 생활 갤러리</h2>
+        <p>정선에서의 일상을 담은 순간들</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item span-2 g-autumn fade-up">
+          <span class="photo-icon">&#127809;</span>
+          <div class="gallery-overlay"><span>무지개 걸린 가을 산</span></div>
+        </div>
+        <div class="gallery-item g-snow fade-up">
+          <span class="photo-icon">&#10052;&#65039;</span>
+          <div class="gallery-overlay"><span>눈 덮인 정선</span></div>
+        </div>
+        <div class="gallery-item g-fire fade-up">
+          <span class="photo-icon">&#128293;</span>
+          <div class="gallery-overlay"><span>벽난로의 따뜻함</span></div>
+        </div>
+
+        <div class="gallery-item g-market fade-up">
+          <span class="photo-icon">&#127981;</span>
+          <div class="gallery-overlay"><span>정선 오일장</span></div>
+        </div>
+        <div class="gallery-item g-dog span-row fade-up">
+          <span class="photo-icon">&#128054;</span>
+          <div class="gallery-overlay"><span>로시와 산책</span></div>
+        </div>
+        <div class="gallery-item g-cable fade-up">
+          <span class="photo-icon">&#128225;</span>
+          <div class="gallery-overlay"><span>가리왕산 케이블카</span></div>
+        </div>
+        <div class="gallery-item g-ocean fade-up">
+          <span class="photo-icon">&#127754;</span>
+          <div class="gallery-overlay"><span>소돌해변 카페</span></div>
+        </div>
+
+        <div class="gallery-item g-cat fade-up">
+          <span class="photo-icon">&#128049;</span>
+          <div class="gallery-overlay"><span>고양이 일광욕</span></div>
+        </div>
+        <div class="gallery-item span-2 g-mountain fade-up">
+          <span class="photo-icon">&#9968;</span>
+          <div class="gallery-overlay"><span>해발 1,382m의 세상</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Food Section -->
+  <section class="food" id="food">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-icon">&#127860;</span>
+        <div class="section-label">LOCAL FOOD</div>
+        <h2>정선 맛집 & 한식</h2>
+        <p>오일장 어묵부터 정선의 향토 음식까지, 맛으로 채우는 산골 생활</p>
+      </div>
+
+      <div class="food-grid">
+        <div class="food-card fade-up">
+          <div class="food-card-image oden-bg">
+            <span class="photo-icon">&#127833;</span>
+            <span class="photo-label">오일장 어묵탕</span>
+          </div>
+          <div class="food-card-body">
+            <h3>오일장 어묵 & 오뎅</h3>
+            <p>추운 날 시장 입구에서 먹는 따끈한 어묵탕 한 그릇. 국물 맛이 일품인 정선 오일장의 대표 간식입니다.</p>
+            <div class="food-tags">
+              <span class="food-tag">오일장</span>
+              <span class="food-tag">겨울 간식</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card fade-up">
+          <div class="food-card-image bibim-bg">
+            <span class="photo-icon">&#127835;</span>
+            <span class="photo-label">곤드레나물밥</span>
+          </div>
+          <div class="food-card-body">
+            <h3>곤드레나물밥</h3>
+            <p>강원도 정선의 대표 향토음식. 갓 지은 곤드레나물밥에 참기름과 간장을 넣어 슥슥 비벼 먹는 건강한 한 끼.</p>
+            <div class="food-tags">
+              <span class="food-tag">향토음식</span>
+              <span class="food-tag">건강식</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card fade-up">
+          <div class="food-card-image jeon-bg">
+            <span class="photo-icon">&#129374;</span>
+            <span class="photo-label">메밀전 & 감자전</span>
+          </div>
+          <div class="food-card-body">
+            <h3>메밀전 & 감자전</h3>
+            <p>바삭하게 부쳐낸 메밀전과 쫄깃한 감자전. 막걸리 한 잔과 함께하면 정선의 맛을 온전히 느낄 수 있습니다.</p>
+            <div class="food-tags">
+              <span class="food-tag">전통 먹거리</span>
+              <span class="food-tag">막걸리 안주</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card fade-up">
+          <div class="food-card-image sundubu-bg">
+            <span class="photo-icon">&#127858;</span>
+            <span class="photo-label">뜨끈한 순두부찌개</span>
+          </div>
+          <div class="food-card-body">
+            <h3>순두부찌개</h3>
+            <p>산속 깨끗한 물로 만든 부드러운 순두부찌개. 추운 겨울날 몸과 마음을 따뜻하게 데워주는 든든한 한 끼.</p>
+            <div class="food-tags">
+              <span class="food-tag">겨울 보양식</span>
+              <span class="food-tag">한식</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card fade-up">
+          <div class="food-card-image gogi-bg">
+            <span class="photo-icon">&#129385;</span>
+            <span class="photo-label">한우 숯불구이</span>
+          </div>
+          <div class="food-card-body">
+            <h3>한우 숯불구이</h3>
+            <p>강원도 한우의 풍미를 숯불에 구워 즐기는 최고의 맛. 정선의 맑은 공기 속에서 먹는 고기 맛은 특별합니다.</p>
+            <div class="food-tags">
+              <span class="food-tag">강원한우</span>
+              <span class="food-tag">특선</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card fade-up">
+          <div class="food-card-image makgeolli-bg">
+            <span class="photo-icon">&#127862;</span>
+            <span class="photo-label">정선 전통 막걸리</span>
+          </div>
+          <div class="food-card-body">
+            <h3>정선 막걸리</h3>
+            <p>정선 지역의 맑은 물과 좋은 쌀로 빚은 전통 막걸리. 오일장에서 전을 안주 삼아 한 잔 걸치는 소소한 행복.</p>
+            <div class="food-tags">
+              <span class="food-tag">토속주</span>
+              <span class="food-tag">전통주</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <div class="quote-section">
+    <div class="quote-inner fade-up">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">
+        산이 높으면 골이 깊고,<br>
+        골이 깊으면 물이 맑고,<br>
+        물이 맑으면 사람이 순하다.<br>
+        정선은 그런 곳입니다.
+      </p>
+      <p class="quote-author">- 정선에서의 일상을 사랑하며</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>&#127956; 안해균의 정선 생활</h3>
+          <p>서울과 정선을 오가며, 산과 자연, 반려동물과 함께하는 고즈넉한 일상의 기록.</p>
+
+          <a href="https://www.facebook.com/haekyoon" target="_blank" rel="noopener noreferrer" class="facebook-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Facebook 방문하기
+          </a>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-link-group">
+            <h4>바로가기</h4>
+            <a href="#about">소개</a>
+            <a href="#nature">자연과 풍경</a>
+            <a href="#market">정선 오일장</a>
+            <a href="#cafe">카페 생활</a>
+          </div>
+          <div class="footer-link-group">
+            <h4>더 보기</h4>
+            <a href="#byulchae">졸드루 별채</a>
+            <a href="#pets">반려동물</a>
+            <a href="#gallery">갤러리</a>
+            <a href="#food">맛집 & 한식</a>
+            <a href="#hero">맨 위로</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 안해균의 정선 생활. All rights reserved.</p>
+        <p class="made-with">&#127956; 정선, 강원도에서</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="닫기">&#10005;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="이전">&#10094;</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="다음">&#10095;</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+    <img class="lightbox-image" id="lightboxImage" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="맨 위로 스크롤">&#8593;</button>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      mobileToggle.textContent = navLinks.classList.contains('open') ? '\u2715' : '\u2630';
+    });
+
+    // Close mobile menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        mobileToggle.textContent = '\u2630';
+      });
+    });
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+
+    // Scroll reveal animation
+    const observerOptions = {
+      threshold: 0.05,
+      rootMargin: '0px 0px 50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Stagger animation for cards
+    document.querySelectorAll('.nature-cards .nature-card, .food-grid .food-card, .gallery-grid .gallery-item').forEach((card, index) => {
+      card.style.transitionDelay = `${index * 0.1}s`;
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    let currentIndex = 0;
+
+    const galleryData = [];
+    galleryItems.forEach(item => {
+      const overlay = item.querySelector('.gallery-overlay span');
+      const caption = overlay ? overlay.textContent : '';
+      const bg = getComputedStyle(item).backgroundImage;
+      const url = bg.replace(/url\(["']?/, '').replace(/["']?\)/, '');
+      galleryData.push({ url, caption });
+    });
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightbox();
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function updateLightbox() {
+      lightboxImage.src = galleryData[currentIndex].url;
+      lightboxImage.alt = galleryData[currentIndex].caption;
+      lightboxCaption.textContent = galleryData[currentIndex].caption;
+      lightboxCounter.textContent = `${currentIndex + 1} / ${galleryData.length}`;
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % galleryData.length;
+      updateLightbox();
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + galleryData.length) % galleryData.length;
+      updateLightbox();
+    }
+
+    galleryItems.forEach((item, i) => {
+      item.addEventListener('click', () => openLightbox(i));
+    });
+
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    document.getElementById('lightboxNext').addEventListener('click', nextImage);
+    document.getElementById('lightboxPrev').addEventListener('click', prevImage);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    });
+
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById('scrollTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      if (window.scrollY > 600) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinksAll = document.querySelectorAll('.nav-links a');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinksAll.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { threshold: 0.3, rootMargin: '-64px 0px 0px 0px' });
+
+    sections.forEach(section => sectionObserver.observe(section));
+  </script>
+</body>
+</html>
