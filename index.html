@@ -1427,177 +1427,84 @@
     }
 
     .guestbook-content {
-      max-width: 800px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
-    .guestbook-cta {
-      text-align: center;
-      margin-bottom: 40px;
+    .guestbook-form {
+      background: white;
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-soft);
     }
 
-    .guestbook-cta p {
-      color: var(--text-mid);
-      font-size: 0.92rem;
-      margin-top: 12px;
-      line-height: 1.6;
+    .guestbook-form input,
+    .guestbook-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #e0e0e0;
+      border-radius: var(--radius-sm);
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      transition: var(--transition);
+      outline: none;
+      margin-bottom: 16px;
     }
 
-    .guestbook-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .guestbook-form input:focus,
+    .guestbook-form textarea:focus {
+      border-color: var(--forest-light);
+      box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.15);
+    }
+
+    .guestbook-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .guestbook-submit {
+      width: 100%;
+      padding: 14px;
       background: var(--forest);
       color: white;
-      padding: 14px 32px;
-      border-radius: var(--radius);
-      text-decoration: none;
-      font-weight: 600;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: 'Noto Sans KR', sans-serif;
       font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
       transition: var(--transition);
       box-shadow: 0 4px 15px rgba(45, 106, 79, 0.3);
     }
 
-    .guestbook-btn:hover {
+    .guestbook-submit:hover {
       background: var(--forest-dark);
-      transform: translateY(-2px);
+      transform: translateY(-1px);
       box-shadow: 0 6px 20px rgba(45, 106, 79, 0.4);
     }
 
-    .guestbook-count {
-      display: inline-block;
-      background: rgba(255,255,255,0.25);
-      padding: 2px 10px;
-      border-radius: 12px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      margin-left: 4px;
+    .guestbook-submit:disabled {
+      background: var(--text-light);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
     }
 
-    .guestbook-comments {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .guestbook-card {
-      background: white;
-      border-radius: var(--radius);
+    .guestbook-success {
+      text-align: center;
       padding: 24px;
-      box-shadow: var(--shadow-soft);
-      transition: var(--transition);
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    .guestbook-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .guestbook-card:hover {
-      box-shadow: var(--shadow-medium);
-      transform: translateY(-2px);
-    }
-
-    .guestbook-card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .guestbook-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--warm-cream);
-    }
-
-    .guestbook-meta {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .guestbook-username {
-      font-weight: 600;
-      font-size: 0.92rem;
-      color: var(--forest);
-    }
-
-    .guestbook-date {
-      font-size: 0.78rem;
-      color: var(--text-light);
-    }
-
-    .guestbook-body {
-      color: var(--text-dark);
-      font-size: 0.92rem;
-      line-height: 1.7;
-      word-break: break-word;
-    }
-
-    .guestbook-loading {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--text-light);
-    }
-
-    .guestbook-loading .spinner {
-      width: 32px;
-      height: 32px;
-      border: 3px solid var(--warm-beige);
-      border-top-color: var(--forest);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin: 0 auto 16px;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    .guestbook-empty {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--text-light);
-    }
-
-    .guestbook-empty .empty-icon {
-      font-size: 2.5rem;
-      margin-bottom: 12px;
-    }
-
-    .guestbook-empty p {
-      font-size: 0.92rem;
-    }
-
-    .guestbook-error {
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--text-mid);
-    }
-
-    .guestbook-error p {
-      margin-bottom: 16px;
-      font-size: 0.92rem;
-    }
-
-    .guestbook-retry {
-      background: var(--forest);
-      color: white;
-      border: none;
-      padding: 10px 24px;
+      background: rgba(82, 183, 136, 0.1);
       border-radius: var(--radius-sm);
-      font-size: 0.88rem;
+      color: var(--forest);
       font-weight: 500;
-      cursor: pointer;
-      transition: var(--transition);
+      margin-top: 16px;
+      animation: fadeIn 0.4s ease;
     }
 
-    .guestbook-retry:hover {
-      background: var(--forest-dark);
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* ===== FIREPLACE SECTION ===== */
@@ -2821,19 +2728,12 @@
       </div>
 
       <div class="guestbook-content fade-up">
-        <div class="guestbook-cta">
-          <a href="https://github.com/ahnkey06-wq/hk/issues/1" target="_blank" rel="noopener" class="guestbook-btn">
-            &#9997;&#65039; 방명록 남기기
-          </a>
-          <p>GitHub 계정으로 로그인 후 댓글을 남겨주세요.</p>
-        </div>
-
-        <div class="guestbook-comments" id="guestbookComments">
-          <div class="guestbook-loading">
-            <div class="spinner"></div>
-            <p>방명록을 불러오는 중...</p>
-          </div>
-        </div>
+        <form class="guestbook-form" id="guestbookForm">
+          <input type="text" id="guestbookName" placeholder="이름 (선택)" maxlength="50">
+          <textarea id="guestbookMessage" placeholder="따뜻한 한마디를 남겨주세요..." maxlength="1000" required></textarea>
+          <button type="submit" class="guestbook-submit" id="guestbookSubmit">&#9997;&#65039; 방명록 남기기</button>
+        </form>
+        <div id="guestbookResult"></div>
       </div>
     </div>
   </section>
@@ -3062,113 +2962,43 @@
 
     // ===== GUESTBOOK =====
     (function() {
-      const REPO = 'ahnkey06-wq/hk';
-      const ISSUE_NUMBER = 1;
-      const API_URL = `https://api.github.com/repos/${REPO}/issues/${ISSUE_NUMBER}/comments`;
-      const container = document.getElementById('guestbookComments');
+      var SCRIPT_URL = 'PLACEHOLDER_URL';
+      var form = document.getElementById('guestbookForm');
+      var btn = document.getElementById('guestbookSubmit');
+      var result = document.getElementById('guestbookResult');
 
-      function escapeHtml(str) {
-        const div = document.createElement('div');
-        div.textContent = str;
-        return div.innerHTML;
-      }
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = document.getElementById('guestbookName').value.trim();
+        var message = document.getElementById('guestbookMessage').value.trim();
 
-      function stripMarkdown(text) {
-        return text
-          .replace(/!\[.*?\]\(.*?\)/g, '')
-          .replace(/\[([^\]]+)\]\(.*?\)/g, '$1')
-          .replace(/#{1,6}\s+/g, '')
-          .replace(/(\*{1,3}|_{1,3})(.*?)\1/g, '$2')
-          .replace(/`{1,3}[^`]*`{1,3}/g, '')
-          .replace(/>\s+/g, '')
-          .replace(/[-*+]\s+/g, '')
-          .replace(/\n{3,}/g, '\n\n')
-          .trim();
-      }
-
-      function formatDate(dateStr) {
-        const d = new Date(dateStr);
-        const y = d.getFullYear();
-        const m = String(d.getMonth() + 1).padStart(2, '0');
-        const day = String(d.getDate()).padStart(2, '0');
-        return `${y}.${m}.${day}`;
-      }
-
-      function renderComments(comments) {
-        if (!comments || comments.length === 0) {
-          container.innerHTML = `
-            <div class="guestbook-empty">
-              <div class="empty-icon">&#127807;</div>
-              <p>아직 방명록이 없습니다.<br>첫 번째 방명록을 남겨주세요!</p>
-            </div>`;
+        if (!message) {
+          alert('메시지를 입력해주세요.');
           return;
         }
 
-        const reversed = [...comments].reverse();
-        container.innerHTML = '';
+        btn.disabled = true;
+        btn.textContent = '보내는 중...';
+        result.innerHTML = '';
 
-        reversed.forEach(function(comment, i) {
-          const card = document.createElement('div');
-          card.className = 'guestbook-card';
-          const bodyText = escapeHtml(stripMarkdown(comment.body));
-          card.innerHTML = `
-            <div class="guestbook-card-header">
-              <img class="guestbook-avatar" src="${escapeHtml(comment.user.avatar_url)}" alt="${escapeHtml(comment.user.login)}" loading="lazy">
-              <div class="guestbook-meta">
-                <span class="guestbook-username">${escapeHtml(comment.user.login)}</span>
-                <span class="guestbook-date">${formatDate(comment.created_at)}</span>
-              </div>
-            </div>
-            <div class="guestbook-body">${bodyText.replace(/\n/g, '<br>')}</div>`;
-          container.appendChild(card);
-
-          requestAnimationFrame(function() {
-            setTimeout(function() {
-              card.classList.add('visible');
-            }, i * 100);
-          });
+        fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: name || '익명', message: message })
+        })
+        .then(function() {
+          form.reset();
+          result.innerHTML = '<div class="guestbook-success">감사합니다! 방명록이 전달되었습니다. &#127807;</div>';
+        })
+        .catch(function() {
+          alert('전송에 실패했습니다. 다시 시도해주세요.');
+        })
+        .finally(function() {
+          btn.disabled = false;
+          btn.textContent = '\u270D\uFE0F 방명록 남기기';
         });
-
-        // Update count badge
-        const btn = document.querySelector('.guestbook-btn');
-        if (btn) {
-          const existing = btn.querySelector('.guestbook-count');
-          if (existing) existing.remove();
-          const badge = document.createElement('span');
-          badge.className = 'guestbook-count';
-          badge.textContent = comments.length;
-          btn.appendChild(badge);
-        }
-      }
-
-      function showError() {
-        container.innerHTML = `
-          <div class="guestbook-error">
-            <p>방명록을 불러오지 못했습니다.</p>
-            <button class="guestbook-retry" onclick="loadGuestbook()">다시 시도</button>
-          </div>`;
-      }
-
-      function loadGuestbook() {
-        container.innerHTML = `
-          <div class="guestbook-loading">
-            <div class="spinner"></div>
-            <p>방명록을 불러오는 중...</p>
-          </div>`;
-
-        fetch(API_URL, {
-          headers: { 'Accept': 'application/vnd.github.v3+json' }
-        })
-        .then(function(res) {
-          if (!res.ok) throw new Error('API error');
-          return res.json();
-        })
-        .then(renderComments)
-        .catch(showError);
-      }
-
-      window.loadGuestbook = loadGuestbook;
-      loadGuestbook();
+      });
     })();
   </script>
 </body>
