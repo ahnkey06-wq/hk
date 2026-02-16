@@ -1020,6 +1020,142 @@
       margin-top: 8px;
     }
 
+    /* ===== PARK ROCHE SECTION ===== */
+    .parkroche {
+      background: linear-gradient(180deg, #f0f4f8 0%, #e8eef5 50%, #f0f4f8 100%);
+    }
+
+    .parkroche-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .parkroche-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 220px 180px;
+      gap: 12px;
+    }
+
+    .parkroche-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-medium);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .parkroche-image .photo-icon {
+      font-size: 3rem;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
+    }
+
+    .parkroche-image .photo-label {
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 400;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+      padding: 6px 16px;
+      border-radius: 6px;
+    }
+
+    .parkroche-image-pool {
+      grid-column: span 2;
+      background: url('images/parkroche-pool.jpg') center 60% / cover no-repeat;
+    }
+
+    .parkroche-image-spa {
+      background: url('images/parkroche-spa.jpg') center center / cover no-repeat;
+    }
+
+    .parkroche-image-firepit {
+      background: url('images/parkroche-firepit.jpg') center center / cover no-repeat;
+    }
+
+    .parkroche-image-lobby { background: url('images/parkroche-lobby.jpg') center center / cover no-repeat; }
+    .parkroche-image-wine { background: url('images/parkroche-wine.jpg') center center / cover no-repeat; }
+    .parkroche-image-billiards { background: url('images/parkroche-billiards.jpg') center center / cover no-repeat; }
+
+    .parkroche-text h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+
+    .parkroche-text p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      font-weight: 300;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .parkroche-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #dbe6f0;
+      color: #2c5282;
+      padding: 8px 16px;
+      border-radius: 24px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-top: 8px;
+    }
+
+    .parkroche-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .parkroche-feature {
+      background: white;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: var(--transition);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .parkroche-feature:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .parkroche-feature-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .parkroche-feature-text {
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+
+    .parkroche-feature-text strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+
+    .parkroche-feature-text span {
+      color: var(--text-light);
+      font-size: 0.8rem;
+    }
+
     /* ===== PETS SECTION ===== */
     .pets {
       background: linear-gradient(180deg, var(--snow-white) 0%, #fff3e0 50%, var(--snow-white) 100%);
@@ -1189,6 +1325,9 @@
     .g-autumn { background: url('images/cover-rainbow.jpg') center center / cover no-repeat; }
     .g-mountain { background: url('images/gariwang-snow.jpg') center 50% / cover no-repeat; }
     .g-cat { background: url('images/roshi-sleeping.jpg') center center / cover no-repeat; }
+    .g-parkroche-pool { background: url('images/parkroche-pool.jpg') center 60% / cover no-repeat; }
+    .g-parkroche-firepit { background: url('images/parkroche-firepit.jpg') center center / cover no-repeat; }
+    .g-parkroche-wine { background: url('images/parkroche-wine.jpg') center center / cover no-repeat; }
 
     /* ===== FOOD SECTION ===== */
     .food {
@@ -1656,9 +1795,15 @@
       .market-layout,
       .cafe-feature,
       .cafe-feature.reversed,
-      .byulchae-layout {
+      .byulchae-layout,
+      .parkroche-layout {
         grid-template-columns: 1fr;
         direction: ltr;
+      }
+
+      .parkroche-images {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 180px 140px;
       }
 
       .nature-cards,
@@ -1777,6 +1922,7 @@
         <li><a href="#nature">자연</a></li>
         <li><a href="#market">오일장</a></li>
         <li><a href="#cafe">카페</a></li>
+        <li><a href="#parkroche">파크로쉬</a></li>
         <li><a href="#byulchae">졸드루 별채</a></li>
         <li><a href="#pets">반려동물</a></li>
         <li><a href="#gallery">갤러리</a></li>
@@ -2107,6 +2253,73 @@
     </div>
   </section>
 
+  <!-- Park Roche Section -->
+  <section class="parkroche section" id="parkroche">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-icon">&#127968;</span>
+        <div class="section-label">PARK ROCHE</div>
+        <h2>파크로쉬 리조트 생활</h2>
+        <p>정선 가리왕산 자락, 자연 속 프리미엄 웰니스 리조트에서의 일상</p>
+      </div>
+
+      <div class="parkroche-layout">
+        <div class="parkroche-images fade-up">
+          <div class="parkroche-image parkroche-image-pool">
+            <span class="photo-icon">&#127946;</span>
+            <span class="photo-label">가리왕산이 보이는 아트 풀</span>
+          </div>
+          <div class="parkroche-image parkroche-image-spa">
+            <span class="photo-icon">&#9832;</span>
+            <span class="photo-label">산안개 속 스파</span>
+          </div>
+          <div class="parkroche-image parkroche-image-firepit">
+            <span class="photo-icon">&#128293;</span>
+            <span class="photo-label">자작나무 숲 야외 화덕</span>
+          </div>
+        </div>
+
+        <div class="parkroche-text fade-up">
+          <h3>산 속의 프리미엄 쉼터</h3>
+          <p>정선 가리왕산 자락에 자리한 파크로쉬 리조트는 서울에서의 일상과는 전혀 다른 시간을 선물합니다. 해발 700m에서 바라보는 산안개, 자작나무 숲 사이로 타오르는 야외 화덕, 그리고 산 전망의 아트 풀까지.</p>
+          <p>아침에는 안개 낀 창밖을 바라보며 커피 한 잔, 오후에는 스파에서 온천욕, 저녁에는 와인 한 잔과 함께 불멍. 도시에서는 느낄 수 없는 깊은 휴식이 이곳에 있습니다.</p>
+          <span class="parkroche-tag">&#127968; 파크로쉬 리조트 &amp; 웰니스</span>
+
+          <div class="parkroche-features">
+            <div class="parkroche-feature">
+              <span class="parkroche-feature-icon">&#127946;</span>
+              <div class="parkroche-feature-text">
+                <strong>아쿠아클럽</strong>
+                <span>산 전망 야외 수영장</span>
+              </div>
+            </div>
+            <div class="parkroche-feature">
+              <span class="parkroche-feature-icon">&#9832;</span>
+              <div class="parkroche-feature-text">
+                <strong>웰니스 스파</strong>
+                <span>산안개 속 온천 힐링</span>
+              </div>
+            </div>
+            <div class="parkroche-feature">
+              <span class="parkroche-feature-icon">&#127921;</span>
+              <div class="parkroche-feature-text">
+                <strong>프리미엄 라운지</strong>
+                <span>당구, 와인바</span>
+              </div>
+            </div>
+            <div class="parkroche-feature">
+              <span class="parkroche-feature-icon">&#128293;</span>
+              <div class="parkroche-feature-text">
+                <strong>야외 화덕</strong>
+                <span>자작나무 숲 불멍</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Byulchae Section -->
   <section class="byulchae" id="byulchae">
     <div class="section-inner">
@@ -2295,6 +2508,19 @@
           <span class="photo-icon">&#9968;</span>
           <div class="gallery-overlay"><span>해발 1,382m의 세상</span></div>
         </div>
+
+        <div class="gallery-item span-2 g-parkroche-pool fade-up">
+          <span class="photo-icon">&#127946;</span>
+          <div class="gallery-overlay"><span>파크로쉬 아트 풀</span></div>
+        </div>
+        <div class="gallery-item g-parkroche-firepit fade-up">
+          <span class="photo-icon">&#128293;</span>
+          <div class="gallery-overlay"><span>자작나무 숲 화덕</span></div>
+        </div>
+        <div class="gallery-item g-parkroche-wine fade-up">
+          <span class="photo-icon">&#127863;</span>
+          <div class="gallery-overlay"><span>파크로쉬 와인 타임</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -2440,6 +2666,7 @@
             <a href="#nature">자연과 풍경</a>
             <a href="#market">정선 오일장</a>
             <a href="#cafe">카페 생활</a>
+            <a href="#parkroche">파크로쉬</a>
           </div>
           <div class="footer-link-group">
             <h4>더 보기</h4>
