@@ -1330,97 +1330,6 @@
     .g-parkroche-firepit { background: url('images/parkroche-firepit.jpg') center center / cover no-repeat; }
     .g-parkroche-wine { background: url('images/parkroche-wine.jpg') center center / cover no-repeat; }
 
-    /* ===== FOOD SECTION ===== */
-    .food {
-      background: var(--warm-cream);
-    }
-
-    .food-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .food-card {
-      background: white;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      transition: var(--transition);
-    }
-
-    .food-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-strong);
-    }
-
-    .food-card-image {
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .food-card-image .photo-icon {
-      font-size: 3.5rem;
-      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
-    }
-
-    .food-card-image .photo-label {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      right: 10px;
-      text-align: center;
-      color: white;
-      font-size: 0.75rem;
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(8px);
-      padding: 5px 10px;
-      border-radius: 6px;
-    }
-
-    .oden-bg { background: url('images/market-oden.jpg') center 30% / cover no-repeat; }
-    .bibim-bg { background: url('images/bibimbap.jpg') center center / cover no-repeat; }
-    .jeon-bg { background: url('images/jeon.jpg') center center / cover no-repeat; }
-    .sundubu-bg { background: url('images/sundubu.jpg') center center / cover no-repeat; }
-    .gogi-bg { background: url('images/korean-meat.jpg') center center / cover no-repeat; }
-    .makgeolli-bg { background: url('images/makgeolli.jpg') center center / cover no-repeat; }
-
-    .food-card-body {
-      padding: 20px;
-    }
-
-    .food-card-body h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .food-card-body p {
-      font-size: 0.85rem;
-      color: var(--text-mid);
-      font-weight: 300;
-      line-height: 1.7;
-    }
-
-    .food-card-body .food-tags {
-      display: flex;
-      gap: 6px;
-      margin-top: 12px;
-      flex-wrap: wrap;
-    }
-
-    .food-tag {
-      background: var(--warm-cream);
-      color: var(--coffee-brown);
-      padding: 3px 10px;
-      border-radius: 12px;
-      font-size: 0.72rem;
-      font-weight: 500;
-    }
-
     /* ===== GUESTBOOK SECTION ===== */
     .guestbook {
       background: linear-gradient(180deg, var(--warm-cream) 0%, var(--snow-white) 100%);
@@ -2128,7 +2037,6 @@
         <li><a href="#byulchae">졸드루 별채</a></li>
         <li><a href="#pets">반려동물</a></li>
         <li><a href="#gallery">갤러리</a></li>
-        <li><a href="#food">맛집</a></li>
         <li><a href="#guestbook">방명록</a></li>
       </ul>
       <button class="mobile-toggle" id="mobileToggle" aria-label="메뉴 열기">&#9776;</button>
@@ -2728,110 +2636,6 @@
     </div>
   </section>
 
-  <!-- Food Section -->
-  <section class="food" id="food">
-    <div class="section-inner">
-      <div class="section-header">
-        <span class="section-icon">&#127860;</span>
-        <div class="section-label">LOCAL FOOD</div>
-        <h2>정선 맛집 & 한식</h2>
-        <p>오일장 어묵부터 정선의 향토 음식까지, 맛으로 채우는 산골 생활</p>
-      </div>
-
-      <div class="food-grid">
-        <div class="food-card fade-up">
-          <div class="food-card-image oden-bg">
-            <span class="photo-icon">&#127833;</span>
-            <span class="photo-label">오일장 어묵탕</span>
-          </div>
-          <div class="food-card-body">
-            <h3>오일장 어묵 & 오뎅</h3>
-            <p>추운 날 시장 입구에서 먹는 따끈한 어묵탕 한 그릇. 국물 맛이 일품인 정선 오일장의 대표 간식입니다.</p>
-            <div class="food-tags">
-              <span class="food-tag">오일장</span>
-              <span class="food-tag">겨울 간식</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="food-card fade-up">
-          <div class="food-card-image bibim-bg">
-            <span class="photo-icon">&#127835;</span>
-            <span class="photo-label">곤드레나물밥</span>
-          </div>
-          <div class="food-card-body">
-            <h3>곤드레나물밥</h3>
-            <p>강원도 정선의 대표 향토음식. 갓 지은 곤드레나물밥에 참기름과 간장을 넣어 슥슥 비벼 먹는 건강한 한 끼.</p>
-            <div class="food-tags">
-              <span class="food-tag">향토음식</span>
-              <span class="food-tag">건강식</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="food-card fade-up">
-          <div class="food-card-image jeon-bg">
-            <span class="photo-icon">&#129374;</span>
-            <span class="photo-label">메밀전 & 감자전</span>
-          </div>
-          <div class="food-card-body">
-            <h3>메밀전 & 감자전</h3>
-            <p>바삭하게 부쳐낸 메밀전과 쫄깃한 감자전. 막걸리 한 잔과 함께하면 정선의 맛을 온전히 느낄 수 있습니다.</p>
-            <div class="food-tags">
-              <span class="food-tag">전통 먹거리</span>
-              <span class="food-tag">막걸리 안주</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="food-card fade-up">
-          <div class="food-card-image sundubu-bg">
-            <span class="photo-icon">&#127858;</span>
-            <span class="photo-label">뜨끈한 순두부찌개</span>
-          </div>
-          <div class="food-card-body">
-            <h3>순두부찌개</h3>
-            <p>산속 깨끗한 물로 만든 부드러운 순두부찌개. 추운 겨울날 몸과 마음을 따뜻하게 데워주는 든든한 한 끼.</p>
-            <div class="food-tags">
-              <span class="food-tag">겨울 보양식</span>
-              <span class="food-tag">한식</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="food-card fade-up">
-          <div class="food-card-image gogi-bg">
-            <span class="photo-icon">&#129385;</span>
-            <span class="photo-label">한우 숯불구이</span>
-          </div>
-          <div class="food-card-body">
-            <h3>한우 숯불구이</h3>
-            <p>강원도 한우의 풍미를 숯불에 구워 즐기는 최고의 맛. 정선의 맑은 공기 속에서 먹는 고기 맛은 특별합니다.</p>
-            <div class="food-tags">
-              <span class="food-tag">강원한우</span>
-              <span class="food-tag">특선</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="food-card fade-up">
-          <div class="food-card-image makgeolli-bg">
-            <span class="photo-icon">&#127862;</span>
-            <span class="photo-label">정선 전통 막걸리</span>
-          </div>
-          <div class="food-card-body">
-            <h3>정선 막걸리</h3>
-            <p>정선 지역의 맑은 물과 좋은 쌀로 빚은 전통 막걸리. 오일장에서 전을 안주 삼아 한 잔 걸치는 소소한 행복.</p>
-            <div class="food-tags">
-              <span class="food-tag">토속주</span>
-              <span class="food-tag">전통주</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Guestbook Section -->
   <section class="guestbook section" id="guestbook">
     <div class="section-inner">
@@ -2907,7 +2711,6 @@
             <a href="#byulchae">졸드루 별채</a>
             <a href="#pets">반려동물</a>
             <a href="#gallery">갤러리</a>
-            <a href="#food">맛집 & 한식</a>
             <a href="#guestbook">방명록</a>
             <a href="#hero">맨 위로</a>
           </div>
