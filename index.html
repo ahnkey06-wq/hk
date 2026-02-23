@@ -1571,6 +1571,52 @@
       font-size: 0.95rem;
     }
 
+    .admin-login {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .admin-login input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid #e0e0e0;
+      border-radius: var(--radius-sm);
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .admin-login input:focus {
+      border-color: var(--forest-light);
+      box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.15);
+    }
+
+    .admin-login button {
+      padding: 10px 20px;
+      background: var(--forest);
+      color: white;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .admin-login button:hover {
+      background: var(--forest-dark);
+    }
+
+    .admin-error {
+      color: var(--autumn-red);
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
@@ -2805,10 +2851,13 @@
         <div id="guestbookResult"></div>
 
         <div class="guestbook-entries" id="guestbookEntries">
-          <h3 class="entries-title">남겨주신 글</h3>
-          <div id="entriesList" class="entries-list">
-            <div class="entries-loading">방명록을 불러오는 중...</div>
+          <h3 class="entries-title">남겨주신 글 (관리자 전용)</h3>
+          <div class="admin-login" id="adminLogin">
+            <input type="password" id="adminPassword" placeholder="비밀번호를 입력하세요">
+            <button id="adminLoginBtn">확인</button>
           </div>
+          <div id="adminError" class="admin-error" style="display:none;"></div>
+          <div id="entriesList" class="entries-list" style="display:none;"></div>
         </div>
       </div>
     </div>
@@ -3043,6 +3092,11 @@
       var btn = document.getElementById('guestbookSubmit');
       var result = document.getElementById('guestbookResult');
       var entriesList = document.getElementById('entriesList');
+      var adminLogin = document.getElementById('adminLogin');
+      var adminPassword = document.getElementById('adminPassword');
+      var adminLoginBtn = document.getElementById('adminLoginBtn');
+      var adminError = document.getElementById('adminError');
+      var ADMIN_PASS = '0419';
 
       function formatDate(isoString) {
         if (!isoString) return '';
@@ -3120,7 +3174,22 @@
         });
       });
 
-      loadEntries();
+      function handleAdminLogin() {
+        if (adminPassword.value === ADMIN_PASS) {
+          adminLogin.style.display = 'none';
+          adminError.style.display = 'none';
+          entriesList.style.display = 'flex';
+          loadEntries();
+        } else {
+          adminError.textContent = '비밀번호가 틀렸습니다.';
+          adminError.style.display = 'block';
+        }
+      }
+
+      adminLoginBtn.addEventListener('click', handleAdminLogin);
+      adminPassword.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') handleAdminLogin();
+      });
     })();
   </script>
 </body>
