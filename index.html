@@ -1502,6 +1502,75 @@
       animation: fadeIn 0.4s ease;
     }
 
+    .guestbook-entries {
+      margin-top: 32px;
+    }
+
+    .entries-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--forest-light);
+    }
+
+    .entries-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+
+    .entry-card {
+      background: white;
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      box-shadow: var(--shadow-soft);
+      border-left: 3px solid var(--forest-light);
+      animation: fadeIn 0.4s ease;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .entry-name {
+      font-weight: 600;
+      color: var(--forest);
+      font-size: 0.95rem;
+    }
+
+    .entry-date {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    .entry-message {
+      color: var(--text-dark);
+      font-size: 0.93rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .entries-loading {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-light);
+    }
+
+    .entries-empty {
+      text-align: center;
+      padding: 32px;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
@@ -2734,6 +2803,13 @@
           <button type="submit" class="guestbook-submit" id="guestbookSubmit">&#9997;&#65039; 방명록 남기기</button>
         </form>
         <div id="guestbookResult"></div>
+
+        <div class="guestbook-entries" id="guestbookEntries">
+          <h3 class="entries-title">남겨주신 글</h3>
+          <div id="entriesList" class="entries-list">
+            <div class="entries-loading">방명록을 불러오는 중...</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2966,6 +3042,49 @@
       var form = document.getElementById('guestbookForm');
       var btn = document.getElementById('guestbookSubmit');
       var result = document.getElementById('guestbookResult');
+      var entriesList = document.getElementById('entriesList');
+
+      function formatDate(isoString) {
+        if (!isoString) return '';
+        var d = new Date(isoString);
+        var y = d.getFullYear();
+        var m = String(d.getMonth() + 1).padStart(2, '0');
+        var day = String(d.getDate()).padStart(2, '0');
+        return y + '.' + m + '.' + day;
+      }
+
+      function escapeHtml(str) {
+        var div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+      }
+
+      function loadEntries() {
+        entriesList.innerHTML = '<div class="entries-loading">방명록을 불러오는 중...</div>';
+        fetch(SCRIPT_URL)
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            var entries = data.entries || [];
+            if (entries.length === 0) {
+              entriesList.innerHTML = '<div class="entries-empty">아직 남겨진 글이 없습니다. 첫 번째 글을 남겨보세요!</div>';
+              return;
+            }
+            var html = '';
+            entries.forEach(function(entry) {
+              html += '<div class="entry-card">'
+                + '<div class="entry-header">'
+                + '<span class="entry-name">' + escapeHtml(entry.name) + '</span>'
+                + '<span class="entry-date">' + formatDate(entry.timestamp) + '</span>'
+                + '</div>'
+                + '<div class="entry-message">' + escapeHtml(entry.message) + '</div>'
+                + '</div>';
+            });
+            entriesList.innerHTML = html;
+          })
+          .catch(function() {
+            entriesList.innerHTML = '<div class="entries-empty">방명록을 불러올 수 없습니다.</div>';
+          });
+      }
 
       form.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -2990,6 +3109,7 @@
         .then(function() {
           form.reset();
           result.innerHTML = '<div class="guestbook-success">감사합니다! 방명록이 전달되었습니다. &#127807;</div>';
+          setTimeout(loadEntries, 2000);
         })
         .catch(function() {
           alert('전송에 실패했습니다. 다시 시도해주세요.');
@@ -2999,6 +3119,8 @@
           btn.textContent = '\u270D\uFE0F 방명록 남기기';
         });
       });
+
+      loadEntries();
     })();
   </script>
 </body>
